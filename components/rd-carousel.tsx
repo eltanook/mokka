@@ -110,7 +110,7 @@ export function RdCarousel() {
             </div>
 
             {/* Slide content */}
-            <div className="relative mx-auto max-w-3xl px-16 text-center grid" style={{ minHeight: '280px' }}>
+            <div className="relative mx-auto max-w-3xl px-0 sm:px-16 text-center grid" style={{ minHeight: '280px' }}>
               {SLIDES.map((s, index) => (
                 <div
                   key={index}
@@ -165,7 +165,7 @@ export function RdCarousel() {
               onClick={prev}
               disabled={current === 0}
               aria-label="Diapositiva anterior"
-              className="absolute left-0 top-1/2 -translate-y-1/2 grid size-12 place-items-center rounded-full border border-white/10 bg-white/5 text-white/60 transition-all hover:bg-white/10 hover:text-white disabled:opacity-20 disabled:pointer-events-none"
+              className="absolute left-0 top-1/2 -translate-y-1/2 hidden sm:grid size-12 place-items-center rounded-full border border-white/10 bg-white/5 text-white/60 transition-all hover:bg-white/10 hover:text-white disabled:opacity-20 disabled:pointer-events-none"
             >
               <ChevronLeft className="size-5" />
             </button>
@@ -173,7 +173,7 @@ export function RdCarousel() {
               onClick={next}
               disabled={current === SLIDES.length - 1}
               aria-label="Siguiente diapositiva"
-              className="absolute right-0 top-1/2 -translate-y-1/2 grid size-12 place-items-center rounded-full border border-white/10 bg-white/5 text-white/60 transition-all hover:bg-white/10 hover:text-white disabled:opacity-20 disabled:pointer-events-none"
+              className="absolute right-0 top-1/2 -translate-y-1/2 hidden sm:grid size-12 place-items-center rounded-full border border-white/10 bg-white/5 text-white/60 transition-all hover:bg-white/10 hover:text-white disabled:opacity-20 disabled:pointer-events-none"
             >
               <ChevronRight className="size-5" />
             </button>

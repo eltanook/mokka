@@ -78,7 +78,7 @@ export function StatBand() {
       {/* Dynamic theme overlay */}
       <div className="absolute inset-0 bg-background/90" />
       
-      <div className="relative mx-auto max-w-7xl px-4 pt-20 pb-20 sm:px-6 md:pt-20 md:pb-24">
+      <div className="relative mx-auto max-w-7xl px-4 py-14 md:py-20 sm:px-6">
         {/* Eyebrow */}
         <div className="mb-14 flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-between sm:text-left">
           <div>

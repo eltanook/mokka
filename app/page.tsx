@@ -25,7 +25,7 @@ export default function HomePage() {
           }}
         />
 
-        <div className="relative mx-auto max-w-7xl px-4 pt-14 pb-[7.5rem] sm:px-6 md:pt-18 lg:pt-20">
+        <div className="relative mx-auto max-w-7xl px-4 pt-14 pb-20 sm:px-6 md:pt-18 lg:pt-20 lg:pb-[7.5rem]">
           <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto] lg:gap-16">
             {/* Left column — Text Content */}
             <div className="flex flex-col justify-center">
@@ -72,11 +72,11 @@ export default function HomePage() {
                   aromatizado con <strong className="text-foreground">café</strong>.
                 </p>
 
-                <div className="mt-8 flex flex-wrap items-center gap-3">
+                <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <Link
                     href="#consignas"
                     id="cta-ver-consignas"
-                    className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-bold tracking-wider text-primary-foreground transition-all duration-200 hover:brightness-110 hover:scale-[1.03] active:scale-[0.98] active:translate-y-px"
+                    className="inline-flex w-full sm:w-auto justify-center items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-bold tracking-wider text-primary-foreground transition-all duration-200 hover:brightness-110 hover:scale-[1.03] active:scale-[0.98] active:translate-y-px"
                   >
                     Ver las 12 consignas
                     <ArrowDown className="size-4" />
@@ -84,7 +84,7 @@ export default function HomePage() {
                   <Link
                     href="/consignas/concepto"
                     id="cta-empezar"
-                    className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-7 py-3.5 text-sm font-bold tracking-wider text-foreground backdrop-blur-sm transition-all duration-200 hover:bg-card hover:border-primary/40 active:translate-y-px"
+                    className="inline-flex w-full sm:w-auto justify-center items-center gap-2 rounded-full border border-border bg-card/50 px-7 py-3.5 text-sm font-bold tracking-wider text-foreground backdrop-blur-sm transition-all duration-200 hover:bg-card hover:border-primary/40 active:translate-y-px"
                   >
                     Empezar por el concepto
                   </Link>
@@ -107,7 +107,7 @@ export default function HomePage() {
               </div>
 
               {/* Floating "Listo para consumir" badge */}
-              <span className="animate-float-badge absolute -bottom-4 -left-5 rounded-2xl bg-accent px-4 py-2.5 font-display text-sm tracking-wide text-accent-foreground shadow-xl shadow-black/30">
+              <span className="animate-float-badge absolute -bottom-4 left-2 sm:-left-5 rounded-2xl bg-accent px-4 py-2.5 font-display text-sm tracking-wide text-accent-foreground shadow-xl shadow-black/30">
                 Listo para consumir
               </span>
 

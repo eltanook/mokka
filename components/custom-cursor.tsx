@@ -43,9 +43,9 @@ export function CustomCursor() {
         dotRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`
       }
 
-      // Ring: smooth lag via lerp
-      ringX = lerp(ringX, mouseX, 0.14)
-      ringY = lerp(ringY, mouseY, 0.14)
+      // Ring: zero delay
+      ringX = mouseX
+      ringY = mouseY
       if (ringRef.current) {
         ringRef.current.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`
       }
