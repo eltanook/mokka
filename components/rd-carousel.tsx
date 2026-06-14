@@ -15,15 +15,6 @@ const SLIDES = [
   },
   {
     num: '02',
-    phase: 'Las materias primas',
-    title: 'EL SORTEO',
-    subtitle: 'Carragenina kappa + Café',
-    text: 'Dos ingredientes con propiedades funcionales poderosas. La carragenina kappa como agente gelificante. El café arábica como agente aromatizante y funcional.',
-    chip: 'MP del sorteo',
-    subtitleColor: 'text-moss',
-  },
-  {
-    num: '03',
     phase: 'Primera prueba',
     title: 'PROTOTIPO 1',
     subtitle: 'Gel demasiado firme',
@@ -32,7 +23,7 @@ const SLIDES = [
     subtitleColor: 'text-terracotta',
   },
   {
-    num: '04',
+    num: '03',
     phase: 'El proceso clave',
     title: 'GELIFICACIÓN',
     subtitle: 'En frío, a 4°C',
@@ -41,7 +32,7 @@ const SLIDES = [
     subtitleColor: 'text-primary',
   },
   {
-    num: '05',
+    num: '04',
     phase: 'La solución',
     title: 'FÓRMULA FINAL',
     subtitle: '1.2% carragenina',
@@ -50,7 +41,7 @@ const SLIDES = [
     subtitleColor: 'text-cream',
   },
   {
-    num: '06',
+    num: '05',
     phase: 'El resultado',
     title: 'MOKKA',
     subtitle: 'Vasito 90g · Listo para consumir',

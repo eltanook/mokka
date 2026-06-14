@@ -92,43 +92,38 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right column — product image (contained card) */}
-            <div className="animate-fade-in-up animation-delay-400 relative mx-auto w-full max-w-sm lg:mx-0 lg:w-[340px] xl:w-[400px]">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] border border-border/50 shadow-2xl shadow-black/40">
+            {/* Right column — product image (transparent PNG) */}
+            <div className="animate-fade-in-up animation-delay-400 relative mx-auto hidden w-full max-w-lg lg:block lg:mx-0 lg:w-[530px] xl:w-[620px]">
+              <div className="relative aspect-[4/5]">
                 <Image
                   src="/images/hero-mokka.png"
                   alt="Vasitos de MOKKA, postre de chocolate y café, presentados sobre una superficie de estudio"
                   fill
                   priority
                   sizes="(max-width: 1024px) 90vw, 400px"
-                  className="object-cover"
+                  className="object-contain"
                 />
-                <div className="absolute inset-0 bg-background/10" />
               </div>
 
-              {/* Floating "Listo para consumir" badge */}
-              <span className="animate-float-badge absolute -bottom-4 left-2 sm:-left-5 rounded-2xl bg-accent px-4 py-2.5 font-display text-sm tracking-wide text-accent-foreground shadow-xl shadow-black/30">
-                Listo para consumir
-              </span>
-
-              {/* Floating right badges */}
-              {/* Badge 1: Rectangular card */}
-              <div className="animate-float-badge animation-delay-100 absolute top-16 -right-16 z-10 hidden w-40 flex-col gap-1 rounded-2xl border border-border bg-card/90 p-4 shadow-xl shadow-black/20 backdrop-blur-sm sm:flex">
-                <span className="text-[0.65rem] font-semibold tracking-wider text-muted-foreground uppercase">
+              {/* Floating "Carragenina Kappa" badge -> BOTTOM RIGHT */}
+              <div className="animate-float-badge absolute bottom-12 right-2 sm:-right-4 rounded-xl bg-accent px-5 py-3.5 shadow-xl shadow-black/30 z-20">
+                <span className="block text-[0.65rem] font-bold tracking-[0.2em] text-accent-foreground/70 uppercase mb-0.5">
                   Agente clave
                 </span>
-                <span className="font-display text-sm leading-tight text-foreground">
+                <span className="block font-display text-base leading-none tracking-wide text-accent-foreground">
                   CARRAGENINA KAPPA
                 </span>
               </div>
 
-              {/* Badge 2: Circular number */}
-              <div className="animate-float-badge animation-delay-500 absolute bottom-24 -right-10 z-10 hidden size-24 place-items-center rounded-full border-4 border-background bg-primary shadow-xl shadow-black/20 sm:grid">
-                <div className="text-center">
-                  <span className="block font-display text-3xl leading-none text-primary-foreground">
+              {/* Floating left badges */}
+
+              {/* Badge 2: Circular number -> moved OVER IMAGE ON THE LEFT */}
+              <div className="animate-float-badge animation-delay-500 absolute bottom-48 left-16 sm:left-12 z-20 hidden size-28 place-items-center rounded-full border-4 border-background bg-primary shadow-xl shadow-black/20 sm:grid">
+                <div className="text-center mt-1">
+                  <span className="block font-display text-4xl leading-none text-primary-foreground">
                     90
                   </span>
-                  <span className="block text-[0.65rem] font-bold tracking-widest text-primary-foreground/80 uppercase">
+                  <span className="block text-[0.65rem] font-bold tracking-widest text-primary-foreground/90 uppercase">
                     gramos
                   </span>
                 </div>

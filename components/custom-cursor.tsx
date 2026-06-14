@@ -3,17 +3,14 @@
 import { useEffect, useRef } from 'react'
 
 export function CustomCursor() {
-  const dotRef  = useRef<HTMLDivElement>(null)
-  const ringRef = useRef<HTMLDivElement>(null)
+  const cursorRef = useRef<HTMLDivElement>(null)
+  const dotRef    = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     let mouseX = -200
     let mouseY = -200
-    let ringX  = -200
-    let ringY  = -200
     let raf: number
 
-    // Keep ring listener list current (new links may mount after initial render)
     let rafCount = 0
     const REFRESH_INTERVAL = 60 // refresh link listeners every ~60 frames
 
@@ -22,10 +19,11 @@ export function CustomCursor() {
       mouseY = e.clientY
     }
 
-    const lerp = (a: number, b: number, t: number) => a + (b - a) * t
+    const onMouseDown = () => dotRef.current?.classList.add('cursor-click')
+    const onMouseUp   = () => dotRef.current?.classList.remove('cursor-click')
 
-    const onEnterLink = () => ringRef.current?.classList.add('cursor-hover')
-    const onLeaveLink = () => ringRef.current?.classList.remove('cursor-hover')
+    const onEnterLink = () => dotRef.current?.classList.add('cursor-hover')
+    const onLeaveLink = () => dotRef.current?.classList.remove('cursor-hover')
 
     const attachLinkListeners = () => {
       document.querySelectorAll('a, button, [role="button"], input, label').forEach((el) => {
@@ -38,19 +36,12 @@ export function CustomCursor() {
     }
 
     const tick = () => {
-      // Dot: zero delay — follows mouse exactly
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`
+      // Wrapper follows mouse exactly
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`
       }
 
-      // Ring: zero delay
-      ringX = mouseX
-      ringY = mouseY
-      if (ringRef.current) {
-        ringRef.current.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`
-      }
-
-      // Periodically re-attach listeners to catch dynamically added links
+      // Periodically re-attach listeners
       rafCount++
       if (rafCount % REFRESH_INTERVAL === 0) attachLinkListeners()
 
@@ -58,11 +49,16 @@ export function CustomCursor() {
     }
 
     window.addEventListener('mousemove', onMove, { passive: true })
+    window.addEventListener('mousedown', onMouseDown, { passive: true })
+    window.addEventListener('mouseup', onMouseUp, { passive: true })
+    
     attachLinkListeners()
     raf = requestAnimationFrame(tick)
 
     return () => {
       window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('mousedown', onMouseDown)
+      window.removeEventListener('mouseup', onMouseUp)
       cancelAnimationFrame(raf)
     }
   }, [])
@@ -71,42 +67,44 @@ export function CustomCursor() {
     <>
       <style>{`
         /* cursor: none is set globally in globals.css for pointer: fine devices */
-        @media (pointer: coarse) { .mokka-cursor { display: none !important; } }
+        @media (pointer: coarse) { .mokka-cursor-wrapper { display: none !important; } }
 
-        .mokka-cursor-dot {
+        .mokka-cursor-wrapper {
           position: fixed;
           top: 0; left: 0;
-          width: 7px; height: 7px;
-          border-radius: 50%;
-          background: oklch(0.52 0.1 155);
           pointer-events: none;
           z-index: 99999;
           will-change: transform;
           mix-blend-mode: difference;
         }
 
-        .mokka-cursor-ring {
-          position: fixed;
-          top: 0; left: 0;
-          width: 34px; height: 34px;
+        .mokka-cursor-dot {
+          position: absolute;
+          top: 50%; left: 50%;
+          transform: translate(-50%, -50%) scale(1);
+          width: 24px; height: 24px; /* Even larger base size */
           border-radius: 50%;
-          border: 1.5px solid oklch(0.52 0.1 155 / 0.55);
-          pointer-events: none;
-          z-index: 99998;
-          will-change: transform;
-          transition: width 0.2s cubic-bezier(0.22,1,0.36,1),
-                      height 0.2s cubic-bezier(0.22,1,0.36,1),
-                      border-color 0.2s ease;
+          background: oklch(0.52 0.1 155);
+          will-change: width, height, transform, background-color;
+          transition: width 0.3s cubic-bezier(0.22,1,0.36,1),
+                      height 0.3s cubic-bezier(0.22,1,0.36,1),
+                      background-color 0.3s ease,
+                      transform 0.15s cubic-bezier(0.22,1,0.36,1);
         }
 
-        .mokka-cursor-ring.cursor-hover {
-          width: 50px;
-          height: 50px;
-          border-color: oklch(0.82 0.07 82 / 0.75);
+        .mokka-cursor-dot.cursor-hover {
+          width: 64px;
+          height: 64px;
+        }
+
+        /* Shrinks down with a springy feel when clicked */
+        .mokka-cursor-dot.cursor-click {
+          transform: translate(-50%, -50%) scale(0.65);
         }
       `}</style>
-      <div ref={dotRef}  className="mokka-cursor mokka-cursor-dot"  aria-hidden="true" />
-      <div ref={ringRef} className="mokka-cursor mokka-cursor-ring" aria-hidden="true" />
+      <div ref={cursorRef} className="mokka-cursor-wrapper" aria-hidden="true">
+        <div ref={dotRef} className="mokka-cursor-dot" />
+      </div>
     </>
   )
 }
