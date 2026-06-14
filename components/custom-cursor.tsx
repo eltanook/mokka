@@ -93,8 +93,8 @@ export function CustomCursor() {
         }
 
         .mokka-cursor-dot.cursor-hover {
-          width: 64px;
-          height: 64px;
+          width: 48px;
+          height: 48px;
         }
 
         /* Shrinks down with a springy feel when clicked */
