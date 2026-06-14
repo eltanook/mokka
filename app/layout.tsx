@@ -3,6 +3,7 @@ import { Anton, Inter, Geist_Mono } from 'next/font/google'
 import { SiteNavbar } from '@/components/site-navbar'
 import { SiteFooter } from '@/components/site-footer'
 import { CustomCursor } from '@/components/custom-cursor'
+import { SplashScreen } from '@/components/splash-screen'
 import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
@@ -46,6 +47,7 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased bg-background text-foreground">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <SplashScreen />
           <CustomCursor />
           <div className="flex min-h-screen flex-col">
             <SiteNavbar />
