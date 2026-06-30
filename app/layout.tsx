@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   title: 'MOKKA · Dossier R&D — TPO Bromatología 2026',
   description:
     'Dossier digital del desarrollo de MOKKA, un postre funcional de chocolate y café gelificado con carragenina kappa. Trabajo Práctico Obligatorio — Research & Development de alimentos.',
+  icons: {
+    icon: '/favicon.png',
+  },
 }
 
 export const viewport: Viewport = {

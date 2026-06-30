@@ -212,7 +212,7 @@
   /* Selection color */
   ::selection {
     background: oklch(0.52 0.1 155 / 0.4);
-    color: oklch(0.92 0.025 80);
+    color: var(--foreground);
   }
 }
 
