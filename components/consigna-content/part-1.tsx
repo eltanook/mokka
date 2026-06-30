@@ -10,76 +10,25 @@ import {
   DataTable,
   SplitCards,
 } from '@/components/content'
+import { AnexoDrawer } from '@/components/anexo-drawer'
 
 /* ============== 1 · CONCEPTO ============== */
 export function ConceptoContent() {
   return (
     <>
-      <Section eyebrow="Punto 1 de la consigna" title="Enfoque y concepto detrás del producto">
-        <Lead>
-          MOKKA nace de un cruce entre dos universos que el consumidor rara vez encuentra juntos
-          en la góndola refrigerada: la indulgencia de un postre de chocolate tipo mousse y el
-          ritual cotidiano del café. El concepto es ofrecer un postre lácteo listo para consumir,
-          de textura cremosa y firme a la vez, que combine sabor café-cacao en un formato
-          individual de 90&nbsp;g pensado para el momento de placer de media tarde.
-        </Lead>
+      <Section eyebrow="Punto 1 de la consigna" title="Enfoque / concepto detrás del producto desarrollado">
         <P>
-          El producto se posiciona como un &ldquo;mocha gelificado&rdquo;: un híbrido entre el
-          flan, la mousse y el café con leche, estabilizado en frío mediante carragenina kappa.
-          La elección de gelificar en frío —sin necesidad de horneado ni de huevo como agente
-          estructurante— responde a un concepto productivo simple, escalable y de bajo costo
-          energético, coherente con un desarrollo de R&amp;D realizable a escala de laboratorio.
+          <strong>MOKKA</strong> surge como un postre lácteo refrigerado que integra dos ejes: chocolate cremoso y el ritual cotidiano del café, por lo que buscamos desarrollar una opción lista para consumir.
         </P>
-        <StatGrid
-          stats={[
-            { value: '90 g', label: 'Porción individual lista para consumir' },
-            { value: 'Café + Cacao', label: 'Eje sensorial del producto' },
-            { value: 'Frío', label: 'Gelificación sin horneado' },
-            { value: 'Cremoso', label: 'Textura objetivo tipo mousse-flan' },
-          ]}
-        />
-      </Section>
-
-      <Section title="Los tres pilares del concepto">
-        <div className="grid gap-4 md:grid-cols-3">
-          {[
-            {
-              t: 'Indulgencia accesible',
-              d: 'Un placer cotidiano de porción controlada (90 g), que satisface el antojo dulce sin la culpa de un postre de gran formato.',
-            },
-            {
-              t: 'Ritual del café',
-              d: 'El café no es solo aromatizante: es el insight emocional. MOKKA traslada el momento del cafecito a un formato comestible.',
-            },
-            {
-              t: 'Conveniencia',
-              d: 'Listo para consumir, refrigerado, sin preparación. Apto para consumo en casa, oficina o pausa de estudio.',
-            },
-          ].map((b) => (
-            <div key={b.t} className="rounded-2xl border border-border bg-card p-5">
-              <H3>{b.t}</H3>
-              <P>{b.d}</P>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section title="Insight y propuesta de valor">
         <P>
-          El insight detrás del desarrollo es que el consumidor argentino tiene una relación
-          afectiva intensa con el café y, simultáneamente, busca momentos de indulgencia
-          controlada. Hoy esa necesidad se resuelve con productos separados (un café por un lado,
-          un postre por el otro). MOKKA unifica ambos en una sola experiencia.
+          La idea inicial fue desarrollar una preparación dulce inspirada en el tiramisú, con una base cremosa sabor vainilla, café y un agregado seco separado. Sin embargo, durante los ensayos se observaron problemas de textura, formación de grumos y un color poco atractivo, por lo que el concepto fue evolucionando hacia un postre más definido: una base cremosa de <strong>chocolate y café</strong>, sin agregados sólidos, con mejor homogeneidad, color y aceptación sensorial.
         </P>
-        <Callout title="Propuesta de valor en una frase" variant="info">
-          MOKKA es el postre que sabe a tu café favorito: cremoso, indulgente y listo para
-          disfrutar en cualquier pausa del día.
-        </Callout>
-        <Figure
-          src="/images/q01-concepto.png"
-          alt="Concepto visual de MOKKA: vasito de postre de café y chocolate con cuchara"
-          caption="Figura 1.1 — Moodboard del concepto: cruce entre el ritual del café y el postre indulgente de chocolate."
-        />
+        <P>
+          Para lograrlo, se utilizó una matriz láctea compuesta por leche descremada, crema de leche y leche condensada, que aporta cuerpo y dulzor. A su vez, el cacao complementa el café, suaviza su amargor, mejora el color y refuerza la percepción de un postre indulgente. La formulación final en porción individual de aproximadamente 90 g mantiene esta lógica, combinando ingredientes lácteos, cacao, café, azúcar y carragenina kappa.
+        </P>
+        <P>
+          El enfoque tecnológico se apoya en el uso de <strong>carragenina kappa</strong>. Su función es estabilizar, espesar y contribuir a la formación de una estructura cremosa y homogénea mediante su interacción con las proteínas lácteas, especialmente las caseínas. Lo cual permite mejorar la retención de agua, reducir el riesgo de sinéresis y obtener una textura estable durante el almacenamiento refrigerado. Por eso, MOKKA no se plantea sólo como un postre sabor café, sino como un producto donde la selección de ingredientes responde a una lógica química y funcional.
+        </P>
       </Section>
     </>
   )
@@ -89,78 +38,22 @@ export function ConceptoContent() {
 export function TargetContent() {
   return (
     <>
-      <Section eyebrow="Punto 2 de la consigna" title="Target Market y estudio de mercado">
-        <Lead>
-          MOKKA apunta al segmento de jóvenes adultos urbanos (20–40 años) de NSE medio y
-          medio-alto, consumidores habituales de café y de postres refrigerados de impulso, que
-          valoran tanto la indulgencia como la practicidad. El estudio de mercado justifica el
-          posicionamiento en la intersección de dos categorías en crecimiento: postres lácteos
-          premium y productos derivados del café listos para consumir.
-        </Lead>
-        <StatGrid
-          stats={[
-            { value: '20–40', label: 'Rango etario objetivo (años)' },
-            { value: 'Medio / Alto', label: 'Nivel socioeconómico' },
-            { value: 'Urbano', label: 'Perfil de hábitat' },
-            { value: 'RTE', label: 'Ready-to-eat refrigerado' },
-          ]}
-        />
-      </Section>
-
-      <Section title="Segmentación del consumidor">
-        <DataTable
-          head={['Criterio', 'Definición del target']}
-          rows={[
-            ['Demográfico', 'Mujeres y hombres de 20 a 40 años, principalmente trabajadores y estudiantes.'],
-            ['Geográfico', 'Grandes centros urbanos y conurbano (CABA y GBA como mercado de lanzamiento).'],
-            ['Socioeconómico', 'NSE C2, C3 y ABC1; con capacidad de gasto en indulgencias cotidianas.'],
-            ['Psicográfico', 'Cafeteros, buscadores de placer accesible, valoran practicidad y experiencia sensorial.'],
-            ['Conductual', 'Compra de impulso en kioscos, supermercados y tiendas de cercanía; consumo de media tarde.'],
-          ]}
-          caption="Tabla 2.1 — Matriz de segmentación del consumidor objetivo de MOKKA."
-        />
-      </Section>
-
-      <Section title="Buyer persona">
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-card p-5">
-            <H3>&ldquo;Sofía, 28&rdquo;</H3>
-            <P>
-              Profesional, vive sola, toma 2–3 cafés por día. Busca darse un gusto sin
-              &ldquo;arruinar la dieta&rdquo;. Compra postres individuales en el súper para tener
-              en la heladera. Le importa la marca, el packaging y la experiencia.
-            </P>
-          </div>
-          <div className="rounded-2xl border border-border bg-card p-5">
-            <H3>&ldquo;Mateo, 22&rdquo;</H3>
-            <P>
-              Estudiante universitario. Consume café para estudiar y postres como recompensa.
-              Sensible al precio pero dispuesto a pagar por un producto novedoso que combine sus
-              dos gustos. Descubre productos por redes sociales.
-            </P>
-          </div>
-        </div>
-      </Section>
-
-      <Section title="Tendencias de mercado que justifican el lanzamiento">
-        <List
-          items={[
-            'Crecimiento sostenido de la categoría de café (cold brew, RTD coffee) entre jóvenes adultos.',
-            'Auge de la indulgencia de porción controlada (single-serve) como forma de placer sin exceso.',
-            'Expansión de los postres lácteos refrigerados premium con propuestas de sabor diferenciadas.',
-            'Demanda de conveniencia: productos listos para consumir que se adaptan a la vida urbana acelerada.',
-          ]}
-        />
-        <Callout title="Justificación del posicionamiento" variant="success">
-          Al ubicarse en la intersección de dos tendencias robustas —café y postres indulgentes
-          individuales— MOKKA reduce el riesgo de mercado: no crea una categoría desde cero, sino
-          que combina dos hábitos de consumo ya consolidados.
-        </Callout>
-        <Figure
-          src="/images/q02-target.png"
-          alt="Estudio de mercado y consumidor objetivo de MOKKA"
-          caption="Figura 2.1 — Mapa de posicionamiento: indulgencia vs. funcionalidad/practicidad."
-        />
+      <Section eyebrow="Punto 2 de la consigna" title="Target Market — Estudio de mercado y justificación">
+        <P>
+          MOKKA está dirigido a consumidores jóvenes y adultos que demandan un postre lácteo refrigerado, práctico y listo para consumir, pero que simultáneamente ofrezca una experiencia sensorial diferenciada. El producto se orienta a un segmento objetivo con estilos de vida dinámicos, como estudiantes o trabajadores, que valoran formatos individuales, de fácil conservación y adecuados para consumir en una pausa, merienda o como postre.
+        </P>
+        <P>
+          La elección del perfil café-cacao se justifica por el lugar que ocupa el café en la actualidad. En Argentina, su ingesta se encuentra instalada como una práctica frecuente, con una estimación aproximada de 208 tazas anuales por persona.
+        </P>
+        <P>
+          Asimismo, el desarrollo se enmarca dentro de una categoría con reconocimiento normativo específico. Desde 2025, el Código Alimentario Argentino incorporó la categoría de postres lácteos, lo que permite identificar y clasificar de manera más precisa este tipo de productos dentro del mercado.
+        </P>
+        <P>
+          Por ende, la justificación del target se basa en la articulación de tres aspectos: la aceptación del café como hábito cotidiano, la demanda de productos listos para consumir y la oportunidad de ofrecer una propuesta diferenciada dentro de los postres lácteos refrigerados.
+        </P>
+        <P className="text-sm text-muted-foreground mt-4">
+          Fuente: <a href="https://www.forbesargentina.com/negocios/dia-cafe-cuanto-consume-argentina-variedades-conquistan-mercado-n79122?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">Forbes Argentina - Consumo de café</a>
+        </P>
       </Section>
     </>
   )
@@ -170,53 +63,134 @@ export function TargetContent() {
 export function FormulacionesContent() {
   return (
     <>
-      <Section eyebrow="Punto 3 de la consigna" title="Formulaciones: inicial vs. final">
+      <Section eyebrow="Punto 3 de la consigna" title="Formulaciones: inicial vs Final">
         <Lead>
-          A continuación se presentan las dos formulaciones expresadas en porcentaje
-          peso/peso (% p/p). La fórmula inicial fue el primer prototipo de prueba; la fórmula
-          final es el resultado de las reformulaciones documentadas en la Consigna 5, donde se
-          ajustó la dosis de gelificante, la carga de cacao y café, y el balance de dulzor.
+          En esta sección se presentan las tablas correspondientes a cada una de las formulaciones desarrolladas.
+          En primer lugar se detalla la receta base utilizada para cada prueba y luego la formulación ajustada a una porción individual aproximadamente de 90 g.
+          Las cantidades fueron ajustadas proporcionalmente a partir de la receta base y luego redondeadas para facilitar su lectura. Si bien los valores expresados son aproximados, los porcentajes se mantienen iguales a los de la formulación base, ya que se conservan las mismas proporciones entre los ingredientes.
         </Lead>
-      </Section>
 
-      <Section title="Tabla comparativa de formulaciones (% p/p)">
-        <DataTable
-          head={['Materia prima', 'Fórmula inicial', 'Fórmula final', 'Cambio']}
-          rows={[
-            ['Leche descremada', '34,0 %', '31,1 %', '↓'],
-            ['Crema de leche', '28,0 %', '31,1 %', '↑'],
-            ['Leche condensada', '28,0 %', '31,1 %', '↑'],
-            ['Cacao en polvo', '3,0 %', '3,5 %', '↑'],
-            ['Café (soluble/infusión)', '0,3 %', '0,4 %', '↑'],
-            ['Azúcar', '2,6 %', '2,7 %', '≈'],
-            ['Carragenina kappa', '0,10 %', '0,12 %', '↑'],
-            ['Total', '100 %', '100 %', '—'],
-          ]}
-          caption="Tabla 3.1 — Formulación inicial vs. final expresada en % peso/peso. La fórmula final corresponde a la receta de 482,6 g de la Consigna 7."
-        />
-        <Callout title="Lectura de la tabla" variant="info">
-          La fórmula final aumentó la proporción de crema y leche condensada para lograr mayor
-          cremosidad y cuerpo, subió levemente cacao y café para intensificar el perfil
-          sensorial, y ajustó la carragenina kappa al alza para corregir una textura inicial
-          demasiado blanda.
-        </Callout>
-      </Section>
+        <div className="text-sm text-muted-foreground bg-muted/50 p-4 rounded-xl mb-8 border border-border">
+          <strong>Referencias de medidas caseras:</strong> 1 cucharadita ≈ 5 g &nbsp;|&nbsp; 1 cucharada ≈ 15 g &nbsp;|&nbsp; 1 taza ≈ 250 ml
+        </div>
+        <P>
+          Las cantidades fueron ajustadas proporcionalmente a partir de la receta base y luego redondeadas para facilitar su lectura. Si bien los valores expresados son aproximados, los porcentajes se mantienen iguales a los de la formulación base, ya que se conservan las mismas proporciones entre los ingredientes.
+        </P>
 
-      <Section title="Justificación de los cambios principales">
-        <List
-          ordered
-          items={[
-            'Carragenina kappa 0,10 % → 0,12 %: el primer gel resultó débil y sinéresis visible; el incremento dio una textura firme pero cremosa, sin exceso de rigidez.',
-            'Más crema y leche condensada: mejoraron la sensación grasa en boca (mouthfeel) y aportaron dulzor natural, reduciendo la necesidad de azúcar agregado.',
-            'Cacao 3,0 % → 3,5 %: el prototipo inicial tenía sabor a café dominante; subir el cacao equilibró el perfil mocha buscado.',
-            'Café 0,3 % → 0,4 %: ajuste fino para que el café fuera perceptible sin amargor excesivo.',
-          ]}
-        />
-        <Figure
-          src="/images/q03-formulaciones.png"
-          alt="Comparación visual de las formulaciones inicial y final de MOKKA"
-          caption="Figura 3.1 — Comparativa de prototipos: a la izquierda el gel inicial (más claro y blando), a la derecha la fórmula final (más oscura y firme)."
-        />
+        <div className="mt-8 mb-4">
+          <h4 className="font-display text-lg font-medium tracking-wide text-foreground mb-3">Formulación inicial de la base cremosa y su composición porcentual</h4>
+          <DataTable
+            head={['Ingredientes base cremosa', 'Cantidad', 'Medida casera Aproximada', 'Porcentaje (%)']}
+            rows={[
+              ['Leche descremada', '500 ml ≈ 500 g', '2 tazas', '92,32%'],
+              ['Azúcar', '20 g', '4 cucharaditas', '3,69%'],
+              ['Almidón de maíz', '15 g', '3 cucharaditas', '2,77%'],
+              ['Café soluble', '5 g', '1 cucharadita', '0,92%'],
+              ['Esencia de vainilla', '1 ml ≈ 1 g', 'unas gotas/1/5 cucharadita', '0,18%'],
+              ['Carragenina Kappa', '0,6 g', 'pizca/puntita de cucharadita', '0,11%'],
+              ['Total', '541,6 g', '-', '100%'],
+            ]}
+          />
+          <p className="text-sm text-muted-foreground mt-2 italic">Anexo 1: Cálculo de la formulación inicial de la base cremosa y su composición porcentual.</p>
+        </div>
+
+        <div className="mt-8 mb-4">
+          <h4 className="font-display text-lg font-medium tracking-wide text-foreground mb-3">Formulación inicial de la base cremosa ajustada a una porción 90 g</h4>
+          <DataTable
+            head={['Ingredientes base cremosa', 'Cantidad', 'Medida casera Aproximada', 'Porcentaje (%)']}
+            rows={[
+              ['Leche descremada', '83 ml ≈ 83 g', '⅓ taza', '92,32%'],
+              ['Azúcar', '3,3 g', '⅔ cucharadita', '3,69%'],
+              ['Almidón de maíz', '2,5 g', '½ cucharadita', '2,77%'],
+              ['Café soluble', '0,8 g', '1 ⅙ cucharadita', '0,92%'],
+              ['Esencia de vainilla', '0,17 ml ≈ 0,17 g', 'unas gotas', '0,18%'],
+              ['Carragenina Kappa', '0,10 g', 'pizca mínima de cucharadita', '0,11%'],
+              ['Total', '89,87 g ≈ 90 g', '-', '100%'],
+            ]}
+          />
+          <p className="text-sm text-muted-foreground mt-2 italic">Anexo 2: Cálculo de la formulación inicial de la base cremosa ajustada a una porción de 90 g.</p>
+        </div>
+
+        <div className="mt-8 mb-4">
+          <h4 className="font-display text-lg font-medium tracking-wide text-foreground mb-3">Primera reformulación de la base cremosa y su composición porcentual</h4>
+          <DataTable
+            head={['Ingredientes base cremosa', 'Cantidad', 'Medida casera Aproximada', 'Porcentaje (%)']}
+            rows={[
+              ['Leche descremada', '500 ml ≈ 500 g', '2 tazas', '89,67%'],
+              ['Azúcar', '20 g', '4 cucharaditas', '3,59%'],
+              ['Cacao en polvo', '17 g', '3 y 1/2 cucharaditas aprox', '3,05%'],
+              ['Almidón pregelatinizado', '15 g', '3 cucharadita', '2,69%'],
+              ['Café soluble', '5 g', '1 cucharadita', '0,90%'],
+              ['Carragenina Kappa', '0,6 g', 'pizca/puntita de cucharadita', '0,11%'],
+              ['Total', '557,6 g', '-', '100%'],
+            ]}
+          />
+          <p className="text-sm text-muted-foreground mt-2 italic">Anexo 3: Cálculo de la primera reformulación de la base cremosa y su composición porcentual.</p>
+        </div>
+
+        <div className="mt-8 mb-4">
+          <h4 className="font-display text-lg font-medium tracking-wide text-foreground mb-3">Primera reformulación de la base cremosa ajustada a una porción 90 g</h4>
+          <DataTable
+            head={['Ingredientes base cremosa', 'Cantidad', 'Medida casera Aproximada', 'Porcentaje (%)']}
+            rows={[
+              ['Leche descremada', '80 ≈ 80 g', '⅓ taza', '89,67%'],
+              ['Azúcar', '3,2 g', '⅔ cucharaditas', '3,59%'],
+              ['Cacao en polvo', '2,7 g', '1 cucharadita', '3,05%'],
+              ['Almidón pregelatinizado', '2,4 g', '½ cucharadita', '2,69%'],
+              ['Café soluble', '0,8 g', 'menos de ½ cucharadita', '0,90%'],
+              ['Carragenina Kappa', '0,1 g', 'pizca/puntita de cucharadita', '0,11%'],
+              ['Total', '89,2 g ≈ 90 g', '-', '100%'],
+            ]}
+          />
+          <p className="text-sm text-muted-foreground mt-2 italic">Anexo 4: Cálculo de la primera reformulación de la base cremosa ajustada a una porción de 90 g.</p>
+        </div>
+
+        <div className="mt-8 mb-4">
+          <h4 className="font-display text-lg font-medium tracking-wide text-foreground mb-3">Formulación final de la base cremosa y su composición porcentual</h4>
+          <DataTable
+            head={['Ingredientes base cremosa', 'Cantidad', 'Medida casera Aproximada', 'Porcentaje (%)']}
+            rows={[
+              ['Leche descremada', '150 ml ≈ 150 g', '¾ taza', '30,89%'],
+              ['Crema de leche', '150 ml = 150 g', '¾ taza', '30,89%'],
+              ['Leche condensada', '150 g', '10 cucharadas', '30,89%'],
+              ['Cacao en polvo', '17 g', '3 y ½ cucharaditas', '3,50%'],
+              ['Azúcar', '13 g', '2 cucharaditas y ½', '2,68%'],
+              ['Café soluble', '5 g', '1 cucharadita', '1,03%'],
+              ['Carragenina Kappa', '0,6 g', 'pizca/puntita de cucharadita', '0,12%'],
+              ['Total', '485,6 g', '-', '100%'],
+            ]}
+          />
+          <p className="text-sm text-muted-foreground mt-2 italic">Anexo 5: Cálculo de la Formulación final de la base cremosa y su composición porcentual.</p>
+        </div>
+
+        <div className="mt-8 mb-4">
+          <h4 className="font-display text-lg font-medium tracking-wide text-foreground mb-3">Formulación final de la base cremosa ajustada a una porción de 90 g</h4>
+          <DataTable
+            head={['Ingredientes base cremosa', 'Cantidad', 'Medida casera Aproximada', 'Porcentaje (%)']}
+            rows={[
+              ['Leche descremada', '28 ml ≈ 28 g', '5 cucharaditas y media', '30,89%'],
+              ['Crema de leche', '28 ml = 28 g', '5 cucharaditas y media', '30,89%'],
+              ['Leche condensada', '28 g', '2 cucharadas', '30,89%'],
+              ['Cacao en polvo', '3,2 g', '1 cucharadita', '3,50%'],
+              ['Azúcar', '2,4 g', '½ cucharadita', '2,68%'],
+              ['Café soluble', '0,9 g', '⅕ cucharadita', '1,03%'],
+              ['Carragenina Kappa', '0,1 g', 'pizca mínima de cucharadita', '0,12%'],
+              ['Total', '90,6 g ≈ 90 g', '-', '100%'],
+            ]}
+          />
+          <p className="text-sm text-muted-foreground mt-2 italic">Anexo 6: Cálculo de la Formulación final de la base cremosa ajustada a una porción de 90 g.</p>
+        </div>
+
+        <AnexoDrawer title="Ver Anexos y Cálculos de Formulación">
+          <div className="space-y-6 mt-6">
+            <Figure src="/images/real/3_image1.png" alt="Anexo 1" caption="Anexo 1: Cálculo de la formulación inicial de la base cremosa y su composición porcentual." ratio="aspect-auto" />
+            <Figure src="/images/real/3_image2.png" alt="Anexo 2" caption="Anexo 2: Cálculo de la formulación inicial de la base cremosa ajustada a una porción de 90 g." ratio="aspect-auto" />
+            <Figure src="/images/real/3_image3.png" alt="Anexo 3" caption="Anexo 3: Cálculo de la primera reformulación de la base cremosa y su composición porcentual." ratio="aspect-auto" />
+            <Figure src="/images/real/3_image4.png" alt="Anexo 4" caption="Anexo 4: Cálculo de la primera reformulación de la base cremosa ajustada a una porción de 90 g." ratio="aspect-auto" />
+            <Figure src="/images/real/3_image5.png" alt="Anexo 5" caption="Anexo 5: Cálculo de la Formulación final de la base cremosa y su composición porcentual." ratio="aspect-auto" />
+            <Figure src="/images/real/3_image6.png" alt="Anexo 6" caption="Anexo 6: Cálculo de la Formulación final de la base cremosa ajustada a una porción de 90 g." ratio="aspect-auto" />
+          </div>
+        </AnexoDrawer>
       </Section>
     </>
   )
@@ -227,77 +201,54 @@ export function MateriasPrimasContent() {
   return (
     <>
       <Section eyebrow="Punto 4 de la consigna" title="Materias primas: función y justificación">
-        <Lead>
-          Se describe cada materia prima a nivel químico y funcional, con foco especial en las
-          dos materias primas asignadas por sorteo —carragenina kappa y café—, su impacto sobre
-          el producto y la comparativa contra una fórmula que prescinde de ellas.
-        </Lead>
-      </Section>
-
-      <Section eyebrow="MP del sorteo" title="Carragenina kappa (gelificante)">
+        
+        <H3>Café (café soluble)</H3>
         <P>
-          La carragenina kappa es un polisacárido sulfatado extraído de algas rojas
-          (<em>Rhodophyceae</em>). Químicamente es un galactano lineal de unidades de
-          D-galactosa y 3,6-anhidro-galactosa con un grupo sulfato por disacárido. En presencia
-          de iones potasio (K⁺) y al enfriarse, sus cadenas adoptan una conformación de doble
-          hélice que se agrega formando una red tridimensional: así gelifica el sistema en frío.
+          En este caso, nos tocó por sorteo café y en base a eso decidimos hacer un postre lácteo refrigerado sabor café. El objetivo fue que esté presente y acompañe sin resultar invasivo. Para lograr un perfil sensorial equilibrado, se combinó con ingredientes lácteos y cacao, obteniendo un sabor suave, armónico y agradable.
         </P>
-        <H3>Función en MOKKA</H3>
-        <List
-          items={[
-            'Gelifica el postre dando estructura firme y cohesiva sin necesidad de huevo ni horneado.',
-            'Interactúa sinérgicamente con las proteínas y el calcio de la leche, reforzando el gel (gel lácteo).',
-            'Controla la sinéresis (separación de suero) cuando se dosifica correctamente.',
-            'Permite una textura termorreversible y de corte limpio, característica del kappa.',
-          ]}
-        />
-        <Callout title="Comparativa: con vs. sin carragenina kappa" variant="warning">
-          Sin carragenina, el sistema queda líquido o apenas espesado (tipo bebida o salsa), sin
-          el cuerpo de postre buscado. Una alternativa sería gelatina o almidón, pero la gelatina
-          no es apta vegetariana/halal/kosher de forma directa y el almidón da textura pastosa y
-          opaca. El kappa logra un gel transparente, firme y de bajo dosaje (0,12 %).
-        </Callout>
-      </Section>
 
-      <Section eyebrow="MP del sorteo" title="Café (saborizante funcional)">
+        <H3>Leche descremada (leche descremada pasteurizada)</H3>
         <P>
-          El café aporta los compuestos responsables del aroma y sabor característicos
-          (más de 800 volátiles, melanoidinas de la torrefacción) y cafeína como alcaloide
-          funcional. Aunque su aporte nutricional es prácticamente nulo en la dosis usada
-          (~0,4 %), es el ingrediente diferenciador del concepto.
+          Es la base acuosa del producto, aporta proteínas y minerales que tiene de por sí el alimento. La leche beneficia en cuanto a la estabilidad y textura gracias a que reacciona muy bien con la carragenina, dando una textura deseada. Además, al ser descremada reduce el contenido graso, permitiendo controlar el valor nutricional.
         </P>
-        <List
-          items={[
-            'Define el perfil sensorial mocha junto con el cacao.',
-            'Aporta cafeína, lo que obliga a evaluar la leyenda precautoria de rotulado (ver Consigna 12).',
-            'Sus compuestos amargos deben equilibrarse con el dulzor de la leche condensada y el azúcar.',
-          ]}
-        />
-        <Callout title="Comparativa: con vs. sin café" variant="warning">
-          Sin café, el producto sería un postre de chocolate convencional, sin diferenciación de
-          mercado. El café es lo que convierte a MOKKA en un &ldquo;mocha gelificado&rdquo; y
-          sostiene su propuesta de valor. Su contrapartida es la obligación regulatoria de
-          declarar cafeína.
-        </Callout>
-      </Section>
 
-      <Section title="Materias primas de base (matriz láctea y sabor)">
-        <DataTable
-          head={['Materia prima', 'Naturaleza química', 'Función tecnológica']}
-          rows={[
-            ['Leche descremada', 'Agua, lactosa, proteínas (caseína/suero), minerales (Ca).', 'Base acuosa; el calcio y la caseína refuerzan el gel de carragenina.'],
-            ['Crema de leche', 'Emulsión de grasa láctea (~35 % materia grasa).', 'Cremosidad, cuerpo y vehículo de aromas; mouthfeel graso.'],
-            ['Leche condensada', 'Leche concentrada con azúcar (sacarosa).', 'Dulzor, sólidos lácteos y viscosidad; reduce azúcar agregado.'],
-            ['Cacao en polvo', 'Sólidos de cacao, fibra, polifenoles, almidón.', 'Sabor y color chocolate; aporta fibra y antioxidantes.'],
-            ['Azúcar (sacarosa)', 'Disacárido glucosa-fructosa.', 'Ajuste fino de dulzor y balance del amargor del café/cacao.'],
-          ]}
-          caption="Tabla 4.1 — Materias primas de base, su química y su función tecnológica en el sistema."
-        />
+        <H3>Leche condensada (Leche condensada azucarada)</H3>
+        <P>
+          Aporta grandes beneficios a nivel nutricional y tecnológico. Primero, por la parte láctea proteínas y lactosa. En el lado tecnológico aumenta la viscosidad, dándole cuerpo y cremosidad al postre. Además de aportar dulzor y disminuye la actividad del agua por su elevada concentración de azúcar.
+        </P>
+
+        <H3>Crema (crema de leche)</H3>
+        <P>
+          Es la principal fuente de grasa. Actúa como un potenciador del sabor, mejorando drásticamente la textura dándole mayor suavidad, cremosidad y cuerpo al postre. Desempeña un papel fundamental en la percepción sensorial del producto.
+        </P>
+
+        <H3>Azúcar</H3>
+        <P>
+          Genera y mejora el equilibrio del sabor, balanceado y compensando el amargor del café y del cacao.
+        </P>
+
+        <H3>Cacao (Polvo para preparar bebida analcohólica a base de cacao y azúcar)</H3>
+        <P>
+          Disminuye el amargor del café, y aporta color, aroma y sabor. También beneficia en el aspecto final del postre.
+        </P>
+
+        <H3>Carragenina Kappa (Espesante INS 407)</H3>
+        <P>
+          Es el principal y único hidrocoloide del postre. Cumple la función de estabilizar, gelificar y espesar el alimento. Aumentando la firmeza pero con una consistencia cremosa y viscosa, evitando la sinéresis durante el almacenamiento.
+        </P>
+
         <Figure
-          src="/images/q04-materias-primas.png"
-          alt="Materias primas de MOKKA dispuestas sobre mesada de laboratorio"
-          caption="Figura 4.1 — Materias primas del desarrollo: matriz láctea, cacao, café y carragenina kappa (MP del sorteo)."
+          src="/images/real/4_image1.png"
+          alt="Materias primas utilizadas"
+          caption="Figura 1. Materias primas utilizadas."
         />
+
+        <P className="mt-8">
+          La formulación y elección de los ingredientes fue diseñada para lograr un postre lácteo refrigerado con textura cremosa, estable y homogénea. Cada ingrediente gracias a sus características aportaron funciones que lograron el resultado final deseado. Las proteínas lácteas aportan estructura y participan en la formación de la matriz del producto, la crema mejora la cremosidad y sensación en boca, mientras que el café y cacao definieron el perfil sensorial característico. La carragenina kappa es el principal agente estabilizante porque interactúa con las micelas de caseína formando una red tridimensional que incrementa la retención del agua, mejora la consistencia y evita que se genere sinéresis en el almacenamiento.
+        </P>
+        <P>
+          En conclusión, la formulación nos permite obtener un postre de calidad, sabroso y cremoso.
+        </P>
       </Section>
     </>
   )
@@ -307,81 +258,96 @@ export function MateriasPrimasContent() {
 export function DesarrolloContent() {
   return (
     <>
-      <Section eyebrow="Punto 5 de la consigna" title="Desarrollo del producto y actividades realizadas">
+      <Section eyebrow="Punto 5 de la consigna" title="Desarrollo de producto y ensayos">
         <Lead>
-          El desarrollo siguió el calendario de R&amp;D de la materia: del sorteo de materias
-          primas a la definición del producto, los primeros prototipos, el prototipo final y las
-          pruebas de validación. A continuación se documenta la bitácora completa, incluyendo los
-          ensayos fallidos, que son parte esencial del proceso.
+          El producto MOKKA atravesó distintas etapas de reformulación hasta llegar a su versión final.
         </Lead>
+        <P>
+          Inicialmente, se planteó una propuesta con un determinado enfoque, pero a partir de las pruebas realizadas se fueron identificando distintos aspectos a mejorar vinculados a la textura, el color y la aceptación del producto por parte de los consumidores. Es por este motivo que se realizaron modificaciones en los ingredientes y sobre el concepto general del mismo para así poder obtener una formulación final más adecuada y cercana a las características buscadas.
+        </P>
+        <P>
+          A continuación, se detallan las formulaciones iniciales, los principales problemas observados durante el desarrollo y los cambios realizados hasta llegar al producto final.
+        </P>
       </Section>
 
-      <Section title="Línea de tiempo del proyecto">
-        <DataTable
-          head={['Fecha', 'Etapa', 'Actividad realizada']}
-          rows={[
-            ['13/3', 'Sorteo', 'Asignación de MP: carragenina kappa + café.'],
-            ['20/3', 'Investigación', 'Funcionalidad de las MP. Brainstorming de ideas.'],
-            ['27/3', 'Ideación', 'Listado de conceptos: bebida, gomita, postre, gel energético.'],
-            ['10/4', 'Definición', 'Se elige el postre mocha gelificado (MOKKA).'],
-            ['24/4', 'Prototipo 1', 'Primer gel: textura blanda y sabor café dominante.'],
-            ['22/5', 'Prototipo final', 'Fórmula ajustada: firme, cremosa, perfil mocha balanceado.'],
-            ['Junio', 'Validación', 'Pruebas microbiológicas y evaluación sensorial.'],
-            ['Junio', 'Cierre', 'Ajustes finales y redacción del informe.'],
-          ]}
-          caption="Tabla 5.1 — Cronograma de desarrollo según el calendario sugerido del TPO."
-        />
+      <Section title="La Idea Inicial">
+        <P>
+          La idea del producto inicial consistía en elaborar un postre tipo tiramisú con una base cremosa sabor vainilla y café y un agregado seco separado.
+        </P>
+        <P>
+          Esta primera formulación estaba compuesta por: leche descremada, azúcar, almidón de maíz, café soluble, esencia de vainilla y carragenina kappa. Además, se había pensado una presentación en envase dividido, donde en un compartimento se encontraría la base cremosa y en otro separado vainillas trozadas como agregado seco. El objetivo de esta presentación era que el consumidor pudiera incorporar las vainillas dentro del postre al momento de consumirlo simulando la estructura de un postre tiramisú.
+        </P>
+        <P>
+          El objetivo era obtener un postre con sabor predominante a vainilla acompañado por un sutil toque a café, textura cremosa y con agregados de sólidos (los trozos de vainilla). Sin embargo, durante las primeras pruebas se observaron algunas dificultades tecnológicas. Por un lado, la textura obtenida no era la esperada ya que se formaban grumos por lo que el producto no presentaba una consistencia homogénea. Por otro lado, el color obtenido no era visualmente atractivo ni el deseado ya que resultaba demasiado claro.
+        </P>
+        <div className="max-w-lg w-full">
+          <Figure
+            src="/images/real/5_image1.png"
+            alt="Formulación inicial"
+            ratio="aspect-auto"
+            caption="Figura 1. Formulación inicial."
+          />
+        </div>
       </Section>
 
-      <Section title="Bitácora de prototipos y reformulaciones">
+      <Section title="Primera Reformulación">
+        <P>
+          A partir de estos resultados, se realizó una primera reformulación. Se decidió agregar cacao en polvo, ya que combina adecuadamente con el café y permite mejorar tanto el sabor como el aspecto/color del producto. Además, se reemplazó el almidón de maíz común por un almidón pregelatinizado con el objetivo de mejorar la textura y disminuir la formación de grumos.
+        </P>
+        <P>
+          El almidón de maíz común requiere calentamiento y agitación adecuada para gelatinizar correctamente. Sí la dispersión no es uniforme, los gránulos pueden hidratarse de manera desigual y favorecer la aparición de grumos. Es por este motivo que se evaluó la incorporación de almidón pregelatinizado, debido a que este permite desarrollar viscosidad con menor requerimiento de cocción y puede contribuir a obtener una textura más homogénea y estable.
+        </P>
+        <P>
+          A pesar de esta modificación, la textura obtenida continuó sin ser la esperada, por lo que se decidió avanzar con una nueva reformulación.
+        </P>
+        <div className="max-w-lg w-full">
+          <Figure
+            src="/images/real/5_image2.png"
+            alt="Primera reformulación"
+            ratio="aspect-auto"
+            caption="Figura 2. Primera reformulación."
+          />
+        </div>
+      </Section>
+
+      <Section title="Formulación Final">
+        <P>
+          Finalmente, se decidió eliminar el uso de almidón y reformular el producto utilizando leche condensada y crema de leche, ingredientes los cuales permitieron obtener una textura más cremosa. A su vez, se eliminaron los trozos de vainilla de la formulación ya que el enfoque dejó de ser un postre tipo tiramisú y pasó a orientarse hacia un postre cremoso de chocolate y café. De esta manera la formulación final se definió en función de las mejoras buscadas en cuanto a la textura, color, sabor y aceptación del producto.
+        </P>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Figure
+            src="/images/real/5_image3.png"
+            alt="Formulación final (1)"
+            ratio="aspect-[4/3]"
+            caption="Figura 3. Formulación final."
+          />
+          <Figure
+            src="/images/real/5_image4.png"
+            alt="Formulación final (2)"
+            ratio="aspect-[4/3]"
+            caption="Figura 3. Formulación final (cont.)."
+          />
+        </div>
+      </Section>
+
+      <Section title="Proceso de elaboración de MOKKA">
         <div className="space-y-4">
-          {[
-            {
-              n: 'P1',
-              t: 'Prototipo 1 — Gel base (24/4)',
-              d: 'Carragenina al 0,10 %. Resultado: gel demasiado blando, con sinéresis (suero separado) y sabor a café dominante sobre el cacao. Decisión: subir gelificante y rebalancear sabor.',
-              v: 'warning' as const,
-            },
-            {
-              n: 'P2',
-              t: 'Prototipo 2 — Ajuste de textura',
-              d: 'Carragenina a 0,12 % y más crema. Mejoró firmeza y cremosidad, desapareció la sinéresis. Persistía leve exceso de amargor.',
-              v: 'info' as const,
-            },
-            {
-              n: 'P3',
-              t: 'Prototipo final — Balance mocha (22/5)',
-              d: 'Se subió cacao a 3,5 % y se ajustó azúcar/leche condensada. Perfil mocha equilibrado, textura firme-cremosa de corte limpio. Aprobado para validación.',
-              v: 'success' as const,
-            },
-          ].map((p) => (
-            <Callout key={p.n} title={p.t} variant={p.v}>
-              {p.d}
-            </Callout>
-          ))}
+          <Callout title="Paso 1" variant="info">
+            Se mezclan la leche descremada, la crema de leche y la leche condensada. Esta etapa permite formar la base líquida del producto. La leche aporta principalmente agua, proteínas y lactosa; la crema de leche contribuye con materia grasa aportando cremosidad y cuerpo; y la leche condensada aporta principalmente azúcares y viscosidad.
+          </Callout>
+          <Callout title="Paso 2" variant="info">
+            Por separado, se mezclan los ingredientes secos: cacao en polvo, café soluble, azúcar y carragenina kappa. La carragenina kappa debe ser dispersada previamente junto con los otros sólidos para facilitar su incorporación en la fase líquida posteriormente. Este paso es muy importante desde el punto de vista químico, ya que los hidrocoloides pueden formar grumos si entran en contacto directo con una fase acuosa sin una dispersión adecuada. Si primero se mezclan los secos, se favorece una distribución de la carragenina más uniforme, reduciendo así el riesgo de que luego no se hidrate correctamente.
+          </Callout>
+          <Callout title="Paso 3" variant="info">
+            A la mezcla de sólidos se le incorpora una pequeña porción de leche con el objetivo de facilitar su posterior integración con la base líquida. Este paso permite facilitar la dispersión de los sólidos reduciendo el riesgo de formación de grumos. Posteriormente, esta preparación se cuela y se incorpora al recipiente con la base líquida. El colado permite retener posibles partículas no disueltas o grumos, contribuyendo a una textura más lisa y homogénea en el producto final.
+          </Callout>
+          <Callout title="Paso 4" variant="info">
+            La mezcla de líquidos y secos se lleva a cocción en una olla con agitación constante. Durante esta etapa el calentamiento cumple varias funciones tecnológicas: por un lado favorece la hidratación y activación de la carragenina kappa, mejora la dispersión del cacao en polvo y del café soluble y permite que todos los sólidos se integren de manera uniforme. La agitación constante es fundamental principalmente para evitar que se sedimenten partículas y no se formen grumos. La mezcla se calienta hasta alcanzar una temperatura aproximada de 70-85° para favorecer la hidratación de la carragenina kappa y permitir así el desarrollo de viscosidad. La cocción dura 30 minutos y se busca obtener una base cremosa, uniforme, con mayor cuerpo y estabilidad, favoreciendo la interacción entre los componentes lácteos, los sólidos y el hidrocoloide utilizado como estructurante.
+          </Callout>
+          <Callout title="Paso 5" variant="info">
+            Al finalizar la cocción, la mezcla se retira del fuego y se deja reposar unos 15 minutos a temperatura ambiente para luego poder colocarla en los envases correspondientes y llevarla a refrigerar. Durante el enfriamiento, la carragenina kappa contribuye a la formación de una red estructural que ayuda a estabilizar el producto y a mantener una textura cremosa.
+          </Callout>
         </div>
-      </Section>
-
-      <Section title="Registro fotográfico de ensayos">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <Figure
-            src="/images/q05-desarrollo.png"
-            alt="Prototipo inicial de MOKKA con sinéresis visible"
-            ratio="aspect-[4/3]"
-            caption="Figura 5.1 — Prototipo 1: gel blando con sinéresis."
-          />
-          <Figure
-            src="/images/q05-ensayo-2.png"
-            alt="Prototipo final de MOKKA con textura firme"
-            ratio="aspect-[4/3]"
-            caption="Figura 5.2 — Prototipo final: textura firme y cremosa, corte limpio."
-          />
-        </div>
-        <Callout title="Lección del proceso" variant="info">
-          Documentar los ensayos fallidos permitió aislar la variable crítica (dosis de
-          carragenina) y entender la interacción gelificante–calcio lácteo, evitando sobredosar
-          el sistema en iteraciones posteriores.
-        </Callout>
       </Section>
     </>
   )
@@ -391,79 +357,164 @@ export function DesarrolloContent() {
 export function VentajasContent() {
   return (
     <>
-      <Section eyebrow="Punto 6 de la consigna" title="Ventajas y desventajas del uso de las MP">
-        <Lead>
-          Se contemplan las ventajas y desventajas de las materias primas en tres planos:
-          nutricional, funcional y de proceso. El análisis se concentra en las MP del sorteo y en
-          las decisiones de la matriz láctea.
-        </Lead>
-      </Section>
-
-      <Section title="Carragenina kappa">
+      <Section eyebrow="Punto 6 de la consigna" title="Ventajas y desventajas de las materias primas seleccionadas">
+        
+        <H3>Café (Café soluble)</H3>
         <SplitCards
           left={{
             title: 'Ventajas',
             variant: 'success',
             items: [
-              'Gelifica en frío a muy baja dosis (0,12 %), reduciendo costo y aporte calórico.',
-              'Sinergia con el calcio y proteínas lácteas: gel firme y estable.',
-              'Origen vegetal (algas): apto para perfiles vegetarianos.',
-              'Gel termorreversible de corte limpio y buena apariencia.',
+              'Gran aporte de olor y sabor, ampliamente aceptado por los consumidores.',
+              'Proporciona un color natural que evita el uso de colorantes artificiales.',
+              'Contiene compuestos antioxidantes que aportan un valor agregado nutricional.',
+              'Combina muy bien con ingredientes lácteos y con el cacao (perfil de sabor moka).',
             ],
           }}
           right={{
             title: 'Desventajas',
             variant: 'warning',
             items: [
-              'Sensible a la dosis: en exceso genera textura gomosa o quebradiza.',
-              'Requiere control de iones (K⁺/Ca²⁺) para gelificar de forma reproducible.',
-              'Sinéresis si la formulación o el enfriado no son adecuados.',
-              'Debate regulatorio internacional sobre carragenina de bajo peso molecular.',
+              'Sabor naturalmente amargo, puede intensificarse y ser invasivo si su concentración es elevada.',
+              'La presencia de cafeína puede restringir el consumo en niños.',
             ],
           }}
         />
-      </Section>
 
-      <Section title="Café">
+        <H3>Leche descremada (Leche descremada pasteurizada)</H3>
         <SplitCards
           left={{
             title: 'Ventajas',
             variant: 'success',
             items: [
-              'Diferenciación sensorial: es el corazón del concepto MOKKA.',
-              'Aporta antioxidantes y un alcaloide funcional (cafeína).',
-              'Bajísima dosis de uso: impacto de sabor alto a costo bajo.',
-              'Sinergia de sabor con el cacao (perfil mocha).',
+              'Aporta agua, proteínas de alto valor biológico, lactosa y minerales.',
+              'Las caseínas interactúan con la carragenina kappa, favoreciendo una estructura estable y homogénea.',
+              'Bajo porcentaje de grasa, reduce el contenido lipídico sin afectar la funcionalidad.',
             ],
           }}
           right={{
             title: 'Desventajas',
             variant: 'warning',
             items: [
-              'Obliga a declarar leyenda precautoria por cafeína (rotulado).',
-              'Amargor que debe equilibrarse con dulzor adicional.',
-              'No apto para niños/as por la cafeína (limita el target).',
-              'Variabilidad de aroma según origen y torrefacción del café.',
+              'Menor sensación de cremosidad frente a la leche entera; requiere complementarse con crema.',
+              'Puede presentar separación de fases o sinéresis durante el almacenamiento sin un estabilizante adecuado.',
             ],
           }}
         />
-      </Section>
 
-      <Section title="Matriz láctea (crema, leche condensada, leche)">
-        <DataTable
-          head={['Plano', 'Ventaja', 'Desventaja']}
-          rows={[
-            ['Nutricional', 'Aporta calcio, proteína y vitaminas (A, D, B).', 'Eleva grasas saturadas y azúcares (sellos de advertencia).'],
-            ['Funcional', 'Cremosidad, cuerpo y dulzor natural; refuerza el gel.', 'La grasa puede enmascarar el aroma del café si es excesiva.'],
-            ['Proceso', 'Ingredientes accesibles y de manejo simple en frío.', 'Producto perecedero: exige cadena de frío estricta.'],
-          ]}
-          caption="Tabla 6.1 — Balance de la matriz láctea en los tres planos de análisis."
+        <H3>Leche condensada (Leche condensada azucarada)</H3>
+        <SplitCards
+          left={{
+            title: 'Ventajas',
+            variant: 'success',
+            items: [
+              'Aumenta el contenido de sólidos lácteos, aportando cuerpo, viscosidad y cremosidad.',
+              'Aporta dulzor y disminuye la actividad de agua gracias a su alta concentración de azúcares (mejor conservación).',
+            ],
+          }}
+          right={{
+            title: 'Desventajas',
+            variant: 'warning',
+            items: [
+              'Alto contenido de azúcares que incrementa el aporte calórico.',
+              'Requiere cuidadoso equilibrio con otros ingredientes para evitar dulzor excesivo que opaque el café.',
+            ],
+          }}
         />
-        <Figure
-          src="/images/q06-ventajas.png"
-          alt="Balanza conceptual de ventajas y desventajas de las materias primas"
-          caption="Figura 6.1 — Síntesis del balance ventajas/desventajas de las materias primas clave."
+
+        <H3>Crema (Crema de leche)</H3>
+        <SplitCards
+          left={{
+            title: 'Ventajas',
+            variant: 'success',
+            items: [
+              'Papel fundamental en el desarrollo, textura y perfil sensorial (cremosidad, suavidad y cuerpo).',
+              'Protege los compuestos aromáticos del café y cacao durante el almacenamiento, liberándolos en el consumo.',
+              'Suaviza el amargor característico del café y cacao, generando un perfil más equilibrado.',
+            ],
+          }}
+          right={{
+            title: 'Desventajas',
+            variant: 'warning',
+            items: [
+              'Incrementa el contenido de grasas y el valor energético del producto.',
+              'Riesgo de corte durante el preparado, lo que puede deteriorar la mezcla y presentar grumos.',
+              'Riesgo de separación de fases durante el almacenamiento.',
+            ],
+          }}
         />
+
+        <H3>Cacao (Polvo a base de cacao y azúcar)</H3>
+        <SplitCards
+          left={{
+            title: 'Ventajas',
+            variant: 'success',
+            items: [
+              'Complementa el perfil sensorial del café, aportando color, aroma y un sabor equilibrado.',
+              'Logra una apariencia más atractiva y una combinación de sabores ampliamente aceptada.',
+            ],
+          }}
+          right={{
+            title: 'Desventajas',
+            variant: 'warning',
+            items: [
+              'Puede generar grumos en la preparación (tamizar es obligatorio).',
+            ],
+          }}
+        />
+
+        <H3>Azúcar</H3>
+        <SplitCards
+          left={{
+            title: 'Ventajas',
+            variant: 'success',
+            items: [
+              'Aporta dulzor, equilibra el amargor del café.',
+              'Incrementa los sólidos solubles y mejora la textura.',
+              'Contribuye a disminuir la actividad de agua, favoreciendo la estabilidad.',
+            ],
+          }}
+          right={{
+            title: 'Desventajas',
+            variant: 'warning',
+            items: [
+              'Incrementa el contenido calórico del postre.',
+              'Si se usa en exceso, enmascara el sabor a café y limita la aceptación según tendencias de mercado.',
+            ],
+          }}
+        />
+
+        <H3>Carragenina Kappa (Espesante INS 407)</H3>
+        <SplitCards
+          left={{
+            title: 'Ventajas',
+            variant: 'success',
+            items: [
+              'Forma una red tridimensional que inmoviliza el agua y mejora la consistencia.',
+              'Interactúa con las micelas de caseína fortaleciendo el gel y reduciendo la sinéresis.',
+              'Altamente eficiente: desarrolla estas funciones en proporciones muy bajas.',
+            ],
+          }}
+          right={{
+            title: 'Desventajas',
+            variant: 'warning',
+            items: [
+              'Su uso excesivo puede lograr una textura no deseada (ej. muy gelatinosa o firme).',
+              'Limita la viscosidad y cremosidad buscada si no se dosifica correctamente.',
+            ],
+          }}
+        />
+
+        <div className="mt-12 bg-muted/30 p-6 rounded-2xl border border-border">
+          <h4 className="font-display text-lg font-medium text-foreground mb-4">Clasificación de Ingredientes</h4>
+          <List
+            items={[
+              <span key="1"><strong>El cacao y nesquik:</strong> saborizantes, endulzantes y estimulantes</span>,
+              <span key="2"><strong>Leche descremada, crema y leche condensada:</strong> ingredientes lácteos</span>,
+              <span key="3"><strong>Carragenina kappa:</strong> aditivos alimentarios (estabilizantes)</span>,
+            ]}
+          />
+        </div>
       </Section>
     </>
   )

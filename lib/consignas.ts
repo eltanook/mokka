@@ -94,7 +94,7 @@ export const consignas: Consigna[] = [
     label: 'Tabla Nutricional',
     title: 'Tabla nutricional y sellos',
     summary:
-      'Cálculo nutricional por porción de 90 g, sellos de advertencia según la Ley 27.642 y justificación de claims.',
+      'Cálculo nutricional por porción de 90 g, sellos de advertencia según la Ley 27.624 y justificación de claims.',
     category: 'Etiquetado',
     accent: 'terracotta',
     image: '/images/q07-nutricional.png',
@@ -127,7 +127,7 @@ export const consignas: Consigna[] = [
     label: 'Sensorial',
     title: 'Evaluación sensorial del producto',
     summary:
-      'Diseño del panel, pruebas afectivas y discriminativas, perfil sensorial y resultados sobre el prototipo final.',
+      'Prueba hedónica de aceptación, percepción de atributos organolépticos y evolución de comentarios según prototipos.',
     category: 'Análisis sensorial',
     accent: 'cream',
     image: '/images/q10-sensorial.png',

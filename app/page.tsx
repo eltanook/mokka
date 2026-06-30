@@ -67,7 +67,7 @@ export default function HomePage() {
               <div className="mt-6 animate-fade-in-up animation-delay-300">
                 <p className="mt-0 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
                   Dossier digital que documenta, consigna por consigna, todo el proceso de
-                  Research &amp; Development de un postre indulgente y funcional, gelificado en frío
+                  Research &amp; Development de un postre indulgente y funcional, gelificado por enfriamiento
                   con <strong className="text-foreground">carragenina kappa</strong> y
                   aromatizado con <strong className="text-foreground">café</strong>.
                 </p>
@@ -93,7 +93,7 @@ export default function HomePage() {
             </div>
 
             {/* Right column — product image (transparent PNG) */}
-            <div className="animate-fade-in-up animation-delay-400 relative mx-auto hidden w-full max-w-lg lg:block lg:mx-0 lg:w-[530px] xl:w-[620px]">
+            <div className="animate-fade-in-up animation-delay-400 relative mx-auto w-full max-w-sm sm:max-w-md lg:mx-0 lg:w-[530px] xl:w-[620px]">
               <div className="relative aspect-[4/5]">
                 <Image
                   src="/images/hero-mokka.png"
@@ -118,7 +118,7 @@ export default function HomePage() {
               {/* Floating left badges */}
 
               {/* Badge 2: Circular number -> moved OVER IMAGE ON THE LEFT */}
-              <div className="animate-float-badge animation-delay-500 absolute bottom-48 left-16 sm:left-12 z-20 hidden size-28 place-items-center rounded-full border-4 border-background bg-primary shadow-xl shadow-black/20 sm:grid">
+              <div className="animate-float-badge animation-delay-500 absolute bottom-32 sm:bottom-48 left-2 sm:left-12 z-20 grid size-24 sm:size-28 place-items-center rounded-full border-4 border-background bg-primary shadow-xl shadow-black/20">
                 <div className="text-center mt-1">
                   <span className="block font-display text-4xl leading-none text-primary-foreground">
                     90

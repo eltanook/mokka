@@ -1,6 +1,9 @@
-import type { ReactNode } from 'react'
+'use client'
+
+import { useEffect, useId, type ReactNode } from 'react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
+import { useLightbox } from '@/components/lightbox-provider'
 
 /* ---------- Section ---------- */
 export function Section({
@@ -49,6 +52,12 @@ export function H3({ children }: { children: ReactNode }) {
   )
 }
 
+export function H4({ className, children }: { className?: string, children: ReactNode }) {
+  return (
+    <h4 className={cn("font-display text-lg tracking-wide text-foreground mt-2", className)}>{children}</h4>
+  )
+}
+
 /* ---------- Bulleted list ---------- */
 export function List({
   items,
@@ -93,14 +102,14 @@ export function Callout({
   variant?: 'info' | 'warning' | 'success'
 }) {
   const styles = {
-    info: 'border-indigo/30 bg-indigo/5',
-    warning: 'border-orange/40 bg-orange/10',
-    success: 'border-teal/40 bg-teal/10',
+    info: 'border-primary/30 bg-primary/5',
+    warning: 'border-terracotta/40 bg-terracotta/10',
+    success: 'border-moss/40 bg-moss/10',
   }
   const dot = {
-    info: 'bg-indigo',
-    warning: 'bg-orange',
-    success: 'bg-teal',
+    info: 'bg-primary',
+    warning: 'bg-terracotta',
+    success: 'bg-moss',
   }
   return (
     <div className={cn('rounded-2xl border p-5', styles[variant])}>
@@ -121,16 +130,33 @@ export function Figure({
   alt,
   caption,
   ratio = 'aspect-[16/10]',
+  className,
 }: {
   src: string
   alt: string
   caption?: string
   ratio?: string
+  className?: string
 }) {
+  const { registerImage, unregisterImage, openLightbox } = useLightbox()
+  const id = useId()
+
+  useEffect(() => {
+    registerImage({ id, src, alt, caption })
+    return () => unregisterImage(id)
+  }, [id, src, alt, caption, registerImage, unregisterImage])
+
   return (
-    <figure className="overflow-hidden rounded-2xl border border-border bg-card">
-      <div className={cn('relative w-full', ratio)}>
-        <Image src={src || '/placeholder.svg'} alt={alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+    <figure className={cn("overflow-hidden rounded-2xl border border-border bg-card", className)}>
+      <div 
+        className={cn('w-full cursor-zoom-in', ratio !== 'aspect-auto' ? `relative ${ratio}` : '')} 
+        onClick={() => openLightbox(id)}
+      >
+        {ratio === 'aspect-auto' ? (
+          <img src={src || '/placeholder.svg'} alt={alt} className="w-full h-auto object-contain" />
+        ) : (
+          <Image src={src || '/placeholder.svg'} alt={alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+        )}
       </div>
       {caption && (
         <figcaption className="border-t border-border px-4 py-3 text-xs leading-relaxed text-muted-foreground">
@@ -222,9 +248,9 @@ export function SplitCards({
   right: { title: string; items: string[]; variant: 'success' | 'warning' }
 }) {
   const card = (c: { title: string; items: string[]; variant: 'success' | 'warning' }) => {
-    const border = c.variant === 'success' ? 'border-teal/40' : 'border-orange/40'
-    const head = c.variant === 'success' ? 'text-teal' : 'text-orange'
-    const dot = c.variant === 'success' ? 'bg-teal' : 'bg-orange'
+    const border = c.variant === 'success' ? 'border-moss/40' : 'border-terracotta/40'
+    const head = c.variant === 'success' ? 'text-moss' : 'text-terracotta'
+    const dot = c.variant === 'success' ? 'bg-moss' : 'bg-terracotta'
     return (
       <div className={cn('rounded-2xl border bg-card p-5', border)}>
         <h4 className={cn('mb-3 font-display text-lg tracking-wide', head)}>{c.title}</h4>

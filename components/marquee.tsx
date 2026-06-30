@@ -15,7 +15,7 @@ const ITEMS: MarqueeItem[] = [
   { text: '·' },
   { text: 'POSTRE FUNCIONAL' },
   { text: '·' },
-  { text: 'GELIFICADO EN FRÍO' },
+  { text: 'GELIFICADO POR ENFRIAMIENTO' },
   { text: '·' },
   { text: 'VASITO 90g' },
   { text: '·' },

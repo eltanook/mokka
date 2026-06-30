@@ -22,6 +22,8 @@ export async function generateMetadata({
   }
 }
 
+import { LightboxProvider } from '@/components/lightbox-provider'
+
 export default async function ConsignaPage({
   params,
 }: {
@@ -34,8 +36,10 @@ export default async function ConsignaPage({
   if (!consigna || !Content) notFound()
 
   return (
-    <ConsignaShell consigna={consigna}>
-      <Content />
-    </ConsignaShell>
+    <LightboxProvider>
+      <ConsignaShell consigna={consigna}>
+        <Content />
+      </ConsignaShell>
+    </LightboxProvider>
   )
 }

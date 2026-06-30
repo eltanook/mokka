@@ -1,10 +1,11 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { cn } from '@/lib/utils'
 
 const STATS = [
   {
-    value: '1.2',
+    value: '0.12',
     unit: '%',
     label: 'Carragenina kappa',
     sub: 'Concentración en la fórmula final',
@@ -16,10 +17,10 @@ const STATS = [
     sub: 'Vasito individual listo para consumir',
   },
   {
-    value: '14',
-    unit: ' días',
+    value: '20',
+    unit: ' a 25 días',
     label: 'Vida útil estimada',
-    sub: 'Refrigerado a 4°C sin abrirse',
+    sub: 'Refrigerado a 4°C',
   },
 ]
 
@@ -98,17 +99,10 @@ export function StatBand() {
         </div>
 
         {/* Stats */}
-        <div className="grid gap-0 divide-y divide-border sm:divide-y-0 sm:divide-x sm:grid-cols-3">
+        <div className="grid gap-0 divide-y divide-border sm:divide-y-0 sm:divide-x sm:grid-cols-4">
           {STATS.map((stat, i) => (
-            <div key={i} className="relative flex flex-col items-center gap-2 px-8 py-8 text-center sm:py-0">
-              {/* Giant background value — barely visible */}
-              <span
-                className="pointer-events-none absolute inset-0 flex items-center justify-center select-none font-display leading-none text-foreground/[0.03] overflow-hidden"
-                aria-hidden="true"
-                style={{ fontSize: 'clamp(8rem, 18vw, 16rem)' }}
-              >
-                {stat.value}
-              </span>
+            <div key={i} className={cn("relative flex flex-col items-center gap-2 px-8 py-8 text-center sm:py-0", i === 2 ? "sm:col-span-2" : "sm:col-span-1")}>
+
 
               {/* Actual stat */}
               <div className="relative">

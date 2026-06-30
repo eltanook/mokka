@@ -8,12 +8,12 @@ import {
   VentajasContent,
 } from './part-1'
 import {
-  NutricionalContent,
+  TablaNutricionalContent,
   VidaUtilContent,
-  AnalisisContent,
-  SensorialContent,
-  CostosContent,
-  RegulatorioContent,
+  AnalisisFisicoquimicosContent,
+  EvaluacionSensorialContent,
+  EstructuraCostosContent,
+  MarcoRegulatorioContent,
 } from './part-2'
 
 export const contentRegistry: Record<string, ComponentType> = {
@@ -23,10 +23,10 @@ export const contentRegistry: Record<string, ComponentType> = {
   'materias-primas': MateriasPrimasContent,
   desarrollo: DesarrolloContent,
   'ventajas-desventajas': VentajasContent,
-  'tabla-nutricional': NutricionalContent,
+  'tabla-nutricional': TablaNutricionalContent,
   'vida-util': VidaUtilContent,
-  analisis: AnalisisContent,
-  sensorial: SensorialContent,
-  costos: CostosContent,
-  'marco-regulatorio': RegulatorioContent,
+  analisis: AnalisisFisicoquimicosContent,
+  sensorial: EvaluacionSensorialContent,
+  costos: EstructuraCostosContent,
+  'marco-regulatorio': MarcoRegulatorioContent,
 }
